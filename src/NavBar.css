@@ -1,0 +1,29 @@
+.pagination{
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+  }
+  ul,li {
+    flex: auto !important;
+    text-align: center;
+  }
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: 0;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #00bc8c;
+    border: 0 solid transparent;
+  }
+    ul.pagination {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #00bc8c;
+}
