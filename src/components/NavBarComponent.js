@@ -1,27 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../NavBar.css'
 
-export default function HeaderComponent(props) {
-
+export default function HeaderComponent({RoundCounter}) {
+  const arr = ['Разминка','Воробьиные','Лесные птицы','Певчие птицы','Хищные птицы','Морские птицы'];
+  let navList = arr.map((arr,idx) => (idx===RoundCounter)? <li className="page-item active"key={idx}>  <a className="page-link" href="/#">{arr}</a></li>:<li className="page-item" key={idx}>  <a className="page-link" href="/#">{arr}</a></li>
+  );
     return (
-        <ul className="pagination">
-          <li className="page-item">
-            <a className="page-link" href="/#">Разминка</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="/#">Воробьиные</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="/#">Лесные птицы</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="/#">Певчие птицы</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="/#">Хищные птицы</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="/#">Морские птицы</a>
-          </li>
-        </ul>);
+    <ul className="pagination">{navList}</ul>);
 }
