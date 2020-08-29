@@ -10,8 +10,8 @@ import Context from './context'
 function App() {
   const [RoundCounter,getRoundCount] = useState(0);
   const ScoreCounter = useRef(0);
-  const RoundCounterHandler = () =>{
-    getRoundCount(RoundCounter+1);
+  const RoundCounterHandler = (ansData) =>{
+    if(ansData===mainBird.name)getRoundCount(RoundCounter+1);
     
   }
   let birds = birdsData[RoundCounter];

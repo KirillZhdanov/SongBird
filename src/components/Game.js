@@ -14,7 +14,7 @@ export default function Game({birds,mainBird}) {
      const checkAnswer = (e,getBirdsReload,birdsReload)=> {
         e.target.classList.add('active');
         getAnsData(e.target.innerText);
-        getBirdsReload(birdsReload+"updated");
+        getBirdsReload(ansData);
       }
 console.log("TESTDATR",ansData)
       return (
@@ -23,7 +23,7 @@ console.log("TESTDATR",ansData)
             <div className = "row "> 
                 <PossibleAnswers birds={birds} gettestData = {getAnsData}/>
                 <Descriptions birds={birds} testData={ansData}/>
-                <button className = "col s12  btn waves-effect waves-light" onClick={()=>{RoundCounterHandler();}}>Next level</button>
+                <button className = "col s12  btn waves-effect waves-light" onClick={()=>{RoundCounterHandler(ansData);}}>Next level</button>
             </div>
         </Context.Provider>
     )

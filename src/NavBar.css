@@ -27,7 +27,7 @@
     overflow: hidden;
     background-color: #00bc8c;
 }
- li.active{
+.pagination li.active{
   background-color: #26a69a !important;
 }
 li.active>.page-link{
