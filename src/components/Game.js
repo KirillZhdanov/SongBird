@@ -7,7 +7,10 @@ import Context from '../context';
 
 
 export default function Game({birds,mainBird,ScoreCounter,endFlag}) {
-     
+    const correctSoundUrl = require('../audio/correct.mp3');
+    const correctSound = new Audio(correctSoundUrl);
+    const errorSoundUrl = require('../audio/error.mp3');
+    const errorSound = new Audio(errorSoundUrl);
     const flag = useRef(false);
     const currentRoundScore = useRef(5);
     const [ansData, getAnsData] = useState("");
@@ -20,10 +23,12 @@ export default function Game({birds,mainBird,ScoreCounter,endFlag}) {
             e.target.classList.add('correct');
             ScoreCounter.current += currentRoundScore.current;
             currentRoundScore.current = 5;
+            correctSound.play();
         }
         else{
             e.target.classList.add('incorrect');
             currentRoundScore.current -= 1;
+            errorSound.play();
         }
         flag.current=e.target.classList.contains('correct');
         getAnsData(e.target.innerText);
@@ -34,9 +39,11 @@ export default function Game({birds,mainBird,ScoreCounter,endFlag}) {
         <Context.Provider value = {{checkAnswer}}> 
             <CurrentQuestion mainBird = {mainBird} testData={ansData}/>
             <div className = "row "> 
-                <PossibleAnswers birds={birds} gettestData = {getAnsData}/>
-                <Descriptions birds={birds} testData = {ansData} mainBird={mainBird}/>
-                <button className = "col s12  btn waves-effect waves-light" onClick={()=>{RoundCounterHandler(ansData);flag.current=false}}>Next level</button>
+                <div className = "col s12 answer-description">
+                    <PossibleAnswers birds={birds} gettestData = {getAnsData}/>
+                    <Descriptions birds={birds} testData = {ansData} mainBird={mainBird}/>
+                </div>
+                <button className = "col s12  btn waves-effect waves-light" onClick={()=>{RoundCounterHandler(ansData);flag.current=false}}>Следующий уровень</button>
             </div>
         </Context.Provider>
     )

@@ -8,7 +8,7 @@ export default function PossibleAnswers({birds}) {
     <li className = "collection-item grey darken-3" onClick={(event) => {checkAnswer(event);}}key={idx}>{arr.name}</li>
   );
     return (
-        <div className="col s6">
+        <div className="col s6 grey darken-3 answers-block">
            <ul className = "collection" >{ansList}</ul>
         </div>
     )

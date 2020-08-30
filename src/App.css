@@ -167,9 +167,97 @@ ul,li {
   border-radius: 10px;
   margin: 0;
 }
+.bird-small-image{
+  width: 15vw;
+  height: 11vw;
+  border-radius: 10px;
+  margin: 0;
+}
+audio{
+  width: -webkit-fill-available;
+}
+.main-Bird{
+  width: 100%;
+}
 li.correct{
   background-color: #26a69a !important;
 }
 li.incorrect{
   background-color: #d37b6c !important;
+}
+.description-block{
+  min-height: 274px !important;
+  height: 100%;
+}
+.pic-name {
+  margin-top: 10px;
+  margin-bottom: 0 !important;
+ }
+@media screen and (max-width: 880px) {
+  .bird-small-image {
+    width: 16vw;
+    height: 15vw;
+}
+}
+@media screen and (max-width: 690px) {
+  .pic-name {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .picBlock{
+    min-width: 160px;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .nameBlock{
+    min-width: 160px;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .bird-small-image{
+    width: 22vw;
+    height: 20vw;
+  }
+  .answer-description{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .answers-block{
+    min-width: 270px;
+    width: 85vw !important;
+    margin: 0 auto;
+  }
+  .description-block{
+    min-width: 270px;
+    width: 85vw !important;
+    margin: 5px auto;
+  }
+}
+@media screen and (max-width: 550px) {
+  .random-bird{
+    flex-wrap: wrap;
+  }
+  .bird-image{
+    margin: 0 auto;
+  }
+  .bird-small-image {
+    width: 34vw;
+    height: 24vw;
+}
+.picBlock{
+  width: 100% !important;
+}
+.nameBlock{
+  width: 100% !important;
+}
+  
+}
+@media screen and (max-width: 370px) {
+   .bird-small-image {
+    width: 40vw;
+    height: 35vw;
+}
+  
 }
