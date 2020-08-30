@@ -1,13 +1,9 @@
-import React,{useContext,useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import 'materialize-css'
 import ReactAudioPlayer from 'react-audio-player';
-import Context from '../context'
 
-export default function Descriptions({birds,testData}) {
-    const {geoposition} = useContext(Context);
-    const [navbarData, getNavBarData] = useState("Послушайте плеер.   Выберите птицу из списка");
-    console.log("GEO",geoposition.current ==="")
-   useEffect( ()=>getNavBarData(geoposition.current),[geoposition]);
+export default function Descriptions({birds,testData,mainBird}) {
+  useEffect(()=>console.log("Ответ: ",mainBird.name),[mainBird]); 
     let tmp ="";
     for(const el in birds){
         if(birds[el].name === testData)
@@ -15,10 +11,17 @@ export default function Descriptions({birds,testData}) {
         }
         if(tmp?.name)
     return (
-        <div className = "col s6">
-            <p>{tmp.name}</p>
+        <div className = "col s6 grey darken-3">
+            <div style={{display:'flex'}}>
+                <img className="bird-image" src={tmp.image} alt="Птыц"/>
+                <div>
+                    <p>{tmp.name}</p>
+                    <hr/>
+                    <p>{tmp.species}</p>
+                </div>
+            </div>
             <p>{tmp.description}</p>
-            <img className="bird-image" src={tmp.image} alt="Птыц"/>
+            
             <ReactAudioPlayer  src={tmp.audio} controls/>
         </div>
     )

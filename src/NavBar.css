@@ -33,3 +33,16 @@
 li.active>.page-link{
   background-color: #26a69a !important;
 }
+.score{text-align: right;}
+.logo{
+  background-image: url('./logo.svg');
+  width: 200px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 12px;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}

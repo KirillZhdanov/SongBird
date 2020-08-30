@@ -4,7 +4,7 @@ import defaultImage from '../defaultBird.jpg'
 
 export default function CurrentQuestion({mainBird,testData}) {
     const picData = useRef({name:"********"});
-  console.log("PICDATA",picData);
+    
     /*const get_pic = async(birdName) =>{
         const API_KEY="72f64d9e7830f3e71adbe31757e096d2";
         const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1&tags=${birdName?.BirdRU}`;

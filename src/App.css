@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  background-color: #222;
+  color: white;
+ overflow: hidden;
+}
+body{
+  background-color: #222 !important;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: #ffffff;
+  color: #00bc8c;
+}audio::-webkit-media-controls-play-button{
+ color:#00bc8c !important
 }
 
 .App-logo {
@@ -153,4 +166,10 @@ ul,li {
   height: 155px;
   border-radius: 10px;
   margin: 0;
+}
+li.correct{
+  background-color: #26a69a !important;
+}
+li.incorrect{
+  background-color: #d37b6c !important;
 }
